@@ -19,7 +19,7 @@ This Django-based REST API processes uploaded receipt PDFs, extracts information
 
 - **Python 3.11.x**
 - **Required Packages:**
-    ```
+    ```plaintext
     asgiref==3.8.1
     Django==5.2
     djangorestframework==3.16.0
@@ -100,6 +100,7 @@ You can use Postman to test the following endpoints after running the server on 
   "file_name": "your_uploaded_file.pdf",
   "file_path": "your_file_path"
 }
+```
 
 ---
 
@@ -120,26 +121,33 @@ After uploading, validate the PDF content.
 {
   "file_name": "your_uploaded_file.pdf"
 }
+```
 
 ✅ Sample Successful Response:
+
+```json
 {
   "file_name": "your_uploaded_file.pdf",
   "is_valid": true,
   "invalid_reason": ""
 }
+```
 
 ❌ Sample Failure Response (e.g., corrupted file):
+
+```json
 {
   "file_name": "bad_file.pdf",
   "is_valid": false,
   "invalid_reason": "PdfReadError: ... corrupted file ..."
 }
-
 ```
+
+---
 
 ### 🔹 3. Process Receipt via OCR
 
-After validate the PDF content.
+After validating the PDF content.
 
 **Endpoint:**  
 `POST /process/`
@@ -154,17 +162,23 @@ After validate the PDF content.
 {
    "file_name": "your_uploaded_file.pdf"
 }
+```
 
 ✅ Sample Successful Response:
+
+```json
 {
   "message": "Receipt processed successfully",
   "merchant": "Supermart",
   "amount": 89.50,
   "date": "2024-11-20T00:00:00Z"
 }
+```
+
 ---
 
 ### 🔹 4. Receipt Retrieval APIs 
+
 **Endpoint:**  
 `GET /receipts`
 
@@ -172,11 +186,13 @@ After validate the PDF content.
 `http://127.0.0.1:8000/receipts/`
 
 ✅ Sample Successful Response:
+
+```json
 [
     {
         "id": 25,
         "purchased_at": "2024-08-01T00:00:00Z",
-        "merchant_name": "| Amazon",
+        "merchant_name": "Amazon",
         "total_amount": "191.92",
         "file_path": "C:\\Users\\niles\\OneDrive\\Desktop\\Assignment\\receipt_project\\uploaded_receipts\\8f775375-4675-4b5b-aa92-bc9ea92e88e2_1)receipt.pdf",
         "payment_method": "Credit Card",
@@ -206,11 +222,13 @@ After validate the PDF content.
         "created_at": "2025-05-03T15:52:09.202735Z",
         "updated_at": "2025-05-03T15:52:09.202735Z"
     }
-]    
+]
+```
 
 ---
 
 ### 🔹 5. Get a specific receipt by ID
+
 **Endpoint:**  
 `GET /receipts/1`
 
@@ -218,6 +236,8 @@ After validate the PDF content.
 `http://127.0.0.1:8000/receipts/18/`
 
 ✅ Sample Successful Response:
+
+```json
 {
     "id": 18,
     "purchased_at": "2024-08-08T00:00:00Z",
@@ -229,5 +249,6 @@ After validate the PDF content.
     "created_at": "2025-05-03T15:46:05.471417Z",
     "updated_at": "2025-05-03T15:46:05.471417Z"
 }
+```
 
 ---
