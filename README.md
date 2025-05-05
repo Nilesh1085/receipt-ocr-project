@@ -133,7 +133,7 @@ After uploading, validate the PDF content.
 }
 ```
 
-❌ Sample Failure Response (e.g., corrupted file):
+ Sample Failure Response (e.g., corrupted file):
 
 ```json
 {
