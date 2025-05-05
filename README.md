@@ -93,7 +93,7 @@ You can use Postman to test the following endpoints after running the server on 
 **Key:** `file`  
 **Value:** (Upload a PDF receipt)
 
-✅ Sample Successful Response:
+ Sample Successful Response:
 
 ```json
 {
@@ -123,7 +123,7 @@ After uploading, validate the PDF content.
 }
 ```
 
-✅ Sample Successful Response:
+ Sample Successful Response:
 
 ```json
 {
@@ -164,7 +164,7 @@ After validating the PDF content.
 }
 ```
 
-✅ Sample Successful Response:
+Sample Successful Response:
 
 ```json
 {
@@ -184,8 +184,7 @@ After validating the PDF content.
 
 **URL:**  
 `http://127.0.0.1:8000/receipts/`
-
-✅ Sample Successful Response:
+ Sample Successful Response:
 
 ```json
 [
@@ -235,7 +234,7 @@ After validating the PDF content.
 **URL:**  
 `http://127.0.0.1:8000/receipts/18/`
 
-✅ Sample Successful Response:
+ Sample Successful Response:
 
 ```json
 {
